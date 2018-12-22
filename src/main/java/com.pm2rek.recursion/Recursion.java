@@ -1,6 +1,5 @@
 package com.pm2rek.recursion;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class Recursion {
 		List<String> s3 = new ArrayList<>();
 		List<String> res = new ArrayList<>();
 
-		for (int i = 0; i <= 100; i+=5) {
+		for (int i = 0; i <= 100; i+=10) {
 			String tmp = String.valueOf(i);
 			s1.add(tmp + ",");
 			s2.add(tmp + ",");
@@ -34,8 +33,8 @@ public class Recursion {
 		sAll.add(s2);
 		sAll.add(s3);
 
-		Recursion dupa = new Recursion();
-		dupa.GeneratePermutations(sAll, res, 0, "");
+		Recursion recursion = new Recursion();
+		recursion.GeneratePermutations(sAll, res, 0, "");
 		List<String> combinations = new ArrayList<>();
 
 		for (String list : res) {
@@ -57,7 +56,7 @@ public class Recursion {
 		combo.add(combinations);
 		combo.add(combinations);
 		List<String> result = new ArrayList<>();
-		dupa.GeneratePermutations(combo, result, 0, "");
+		recursion.GeneratePermutations(combo, result, 0, "");
 		System.out.println(result.size());
 		
 		List<String> scoreTable = new ArrayList<>();
@@ -84,7 +83,7 @@ public class Recursion {
 		publicScoreRec.add(scoreTable);
 		publicScoreRec.add(publicScore);
 		
-		dupa.GeneratePermutations(publicScoreRec, publicScoreResult, 0, "");
+		recursion.GeneratePermutations(publicScoreRec, publicScoreResult, 0, "");
 //		System.out.println(publicScoreResult.size());
 //		System.out.println(publicScoreResult.get(1532));
 //		for (String string : publicScoreResult) {
